@@ -1,0 +1,5 @@
+ {{ product.description | split:'[custom]' | first  }}
+    
+{% if product.description contains '[custom]' %}  
+<a href="{{ product.description | split:'[custom]' | last | split:'[/custom]' | first }}">Customize</a>
+{%endif%}
